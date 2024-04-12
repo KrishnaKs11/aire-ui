@@ -24,7 +24,7 @@ env:
   APP_LOCATION: "/" # location of your client code
   API_LOCATION: "api" # location of your api source code - optional
   APP_ARTIFACT_LOCATION: "build" # location of client code build output
-  AZURE_STATIC_WEB_APPS_API_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }} # secret containing deployment token for your static web app
+  AZURE_STATIC_WEB_APPS_API_TOKEN: 028b12d2ffdc006fa378a4e6ac65becdaf177d01d979fd3d4921b12691c71a0b5-308eb3fe-5dc7-44db-bb24-c3fe9441ee4200f178475 # secret containing deployment token for your static web app
 
 permissions:
   contents: read
