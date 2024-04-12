@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect, createRef, useMemo } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import bridgeVideo from '../../assets/banner-video/bridge_city.mp4'; // Only keeping one video import
+import bridgeVideo from '../../assets/banner-video/bg_video.mp4'; // Only keeping one video import
 import Logo from '../../assets/logos/newlogo.png';
 import bannerLogo from '../../assets/logos/bannerlogo.png';
 
