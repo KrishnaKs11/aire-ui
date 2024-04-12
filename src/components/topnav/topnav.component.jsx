@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect, createRef } from 'react';
-import styled, { keyframes  } from 'styled-components';
+import React, { useRef, useState, useEffect, createRef, useMemo } from 'react';
+import styled, { keyframes } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import bridgeVideo from '../../assets/banner-video/bridge_city.mp4'; // Only keeping one video import
@@ -80,8 +80,6 @@ const AnimatedText = styled.div`
   display: ${props => (props.showText ? 'block' : 'none')};
 `;
 
-
-
 const ImageAboveMenuContainer = styled.div`
   display: grid;
   place-items: center start;
@@ -105,7 +103,8 @@ const Nav = () => {
   const videoRef = useRef(createRef());
   const video = bridgeVideo; // Keeping only one video
 
-  const menuTexts = ['The future of Real Estate CRM is here', 'Built for Real Estate, Tested by Realtors', 'Manage. Automate. Focus on what really matters- Relationships', 'Streamlined workflow with Powerful AI', 'One Place, Endless Possibilities'];
+  // Memoize the menuTexts array
+  const menuTexts = useMemo(() => ['The future of Real Estate CRM is here', 'Built for Real Estate, Tested by Realtors', 'Manage. Automate. Focus on what really matters- Relationships', 'Streamlined workflow with Powerful AI', 'One Place, Endless Possibilities'], []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -140,11 +139,12 @@ const Nav = () => {
         <ImageAboveMenuImage src={bannerLogo} alt="Image Above Menu" />
       </ImageAboveMenuContainer>
       <MenuContainer>
-      {menuTexts.map((text, index) => (
-        <AnimatedText key={index} showText={menuTextIndex === index}>
-          {text}
-        </AnimatedText>
-      ))}</MenuContainer>
+        {menuTexts.map((text, index) => (
+          <AnimatedText key={index} showText={menuTextIndex === index}>
+            {text}
+          </AnimatedText>
+        ))}
+      </MenuContainer>
     </NavContainer>
   );
 };
