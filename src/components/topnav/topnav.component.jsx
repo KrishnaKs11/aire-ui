@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect, createRef, useMemo } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import bridgeVideo from '../../assets/banner-video/bg_video.mp4'; // Only keeping one video import
 import Logo from '../../assets/logos/newlogo.png';
 import bannerLogo from '../../assets/logos/bannerlogo.png';
 
@@ -101,7 +100,6 @@ const ImageAboveMenuImage = styled.img`
 const Nav = () => {
   const [menuTextIndex, setMenuTextIndex] = useState(0);
   const videoRef = useRef(createRef());
-  const video = bridgeVideo; // Keeping only one video
 
   // Memoize the menuTexts array
   const menuTexts = useMemo(() => ['The future of Real Estate CRM is here', 'Built for Real Estate, Tested by Realtors', 'Manage. Automate. Focus on what really matters- Relationships', 'Streamlined workflow with Powerful AI', 'One Place, Endless Possibilities'], []);
@@ -127,7 +125,8 @@ const Nav = () => {
   return (
     <NavContainer>
       <BackgroundVideo ref={videoRef} autoPlay loop muted>
-        <source src={video} type="video/mp4" />
+      <source src="https://airestorageaccountforcrm.blob.core.windows.net/sources/bg_video.mp4?sp=r&st=2024-04-18T17:01:29Z&se=2024-12-28T01:01:29Z&sv=2022-11-02&sr=b&sig=4YHilMYkdzFoMAvn%2B1U%2FjSHrLnb7hVkroiOvvkT6RP0%3D" type="video/mp4" />
+
       </BackgroundVideo>
       <LogoContainer>
         <LogoImage src={Logo} alt="Logo" />
